@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<title>creationtechnology- Home Page</title>
+<link href="images/creationtechnology.jpg" rel="icon">
 </head>
 </head>
 <body>
@@ -40,15 +40,15 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		+91-9399810829
 		rdeo@gmail.com
 		<br>
-		<a href="mailto:rdeo2952@gmail.com">Mail to creation Technologies</a>
+		<a href="#">Mail to creation Technologies</a>
 	</span>
 </div>
 <hr>
-	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
+	<p> Service : <a href="#">Get Employee Details </p>
 <hr>
 <hr>
 <p align=center>Creation Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://CREATION_TECHNOLOGY.com/">CREATION_TECHNOLOGY,patna</a> </small></p>
+<p align=center><small>Copyrights 2022 by <a href="#">CREATION_TECHNOLOGY,patna</a> </small></p>
 
 </body>
 </html>
