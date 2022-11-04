@@ -21,13 +21,11 @@ pipeline {
         stage('depoytest') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'appid', path: '', url: 'http://13.232.173.134:8080/')], contextPath: '/apps', war: '**/*.war'
-                echo 'Helo deploytest'
             }
         }
         stage('deployprod') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'appid', path: '', url: 'http://3.111.218.205:8080/')], contextPath: '/productions', war: '**/*.war'
-                echo 'Hello deployprod'
             }
         }
     }
