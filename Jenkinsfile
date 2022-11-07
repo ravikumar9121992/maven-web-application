@@ -9,13 +9,12 @@ pipeline {
         stage('test') {
             steps {
                 sh 'mvn test'
-                echo 'Hello test'
             }
         }
         stage('build') {
             steps {
                 sh 'mvn install'
-                echo 'Hello build'
+                
             }
         }
         stage('depoytest') {
@@ -27,6 +26,18 @@ pipeline {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://3.110.193.22:8080/')], contextPath: '/prod', war: '**/*.war'
             }
+        }
+    }
+    
+    post{
+        always{
+            echo "always"
+        }
+        success{
+            echo "success"
+        }
+        failore{
+            echo "failore"
         }
     }
 }
