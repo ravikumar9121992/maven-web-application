@@ -19,12 +19,12 @@ pipeline {
         }
         stage('depoytest') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.216.184:8080/')], contextPath: 'testt', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.216.184:8080/')], contextPath: 'test', war: '**/*.war'
             }
         }
         stage('deployprod') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://3.110.210.1:8080/')], contextPath: 'prodt', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://3.110.210.1:8080/')], contextPath: 'prod', war: '**/*.war'
             }
         }
     }
