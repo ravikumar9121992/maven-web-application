@@ -4,7 +4,10 @@ pipeline {
         maven 'Maven'
         
     }
-    stage('Build'){
+    
+    stages {
+        
+        stage('Build'){
   steps{
   sh  "mvn clean package"
   }
@@ -14,7 +17,6 @@ pipeline {
   sh  "mvn clean sonar:sonar"
   }
   }
-    stages {
        
         stage('test') {
             steps {
