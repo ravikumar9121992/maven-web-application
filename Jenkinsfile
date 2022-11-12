@@ -4,6 +4,16 @@ pipeline {
         maven 'Maven'
         
     }
+    stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
+        stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar"
+  }
+  }
     stages {
        
         stage('test') {
@@ -11,16 +21,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-         stage('Build'){
-  steps{
-  sh  "mvn clean package"
-  }
-  }
-        stage('ExecuteSonarQubeReport'){
-  steps{
-  sh  "mvn clean sonar:sonar package"
-  }
-  }
+         
         stage('build') {
             steps {
                 sh 'mvn install'
