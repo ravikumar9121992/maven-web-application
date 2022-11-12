@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+         stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
         stage('ExecuteSonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar package"
@@ -22,15 +27,7 @@ pipeline {
                 
             }
         }
-     /*
-         stage('Build'){
-  steps{
-  sh  "mvn clean package"
-  }
-  }
-    
- 
-     */   
+       
         stage('depoytest') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.195.71:8080/')], contextPath: 'gametest', war: '**/*.war'
