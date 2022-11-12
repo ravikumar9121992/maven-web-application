@@ -22,6 +22,11 @@ pipeline {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.196.251:8080/')], contextPath: 'gametest', war: '**/*.war'
             }
         }
+        stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar"
+  }
+  }
         stage('deployprod') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.209:8080/')], contextPath: 'gameprod', war: '**/*.war'
