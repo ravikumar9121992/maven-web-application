@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar package"
+  }
+  }
         stage('build') {
             steps {
                 sh 'mvn install'
@@ -24,11 +29,7 @@ pipeline {
   }
   }
     
- stage('ExecuteSonarQubeReport'){
-  steps{
-  sh  "mvn clean sonar:sonar package"
-  }
-  }
+ 
      */   
         stage('depoytest') {
             steps {
