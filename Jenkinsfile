@@ -4,8 +4,8 @@ pipeline {
         maven 'Maven'
         
     }
-/*
     stages {
+        /*
         stage('test') {
             steps {
                 sh 'mvn test'
