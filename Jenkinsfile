@@ -14,7 +14,12 @@ pipeline {
             }
         }
         
-         
+         stage('build') {
+            steps {
+                sh 'mvn install'
+                
+            }
+        }
 
          
         
@@ -35,12 +40,7 @@ pipeline {
   }
   }
         
-        stage('build') {
-            steps {
-                sh 'mvn install'
-                
-            }
-        }
+        
         
      
         stage('depoytest') {
