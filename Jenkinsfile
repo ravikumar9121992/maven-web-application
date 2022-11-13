@@ -14,19 +14,14 @@ pipeline {
             }
         }
         
-         stage('Build') {
-  steps {
-  sh  "mvn clean package"
-  }
-      }
-        
+      
  stage('SonarQubeReport') {
-  steps {
-  sh  "mvn clean sonar:sonar"
-  }
+     steps {
+         sh  "mvn clean package sonar:sonar"
+       }
   }
          
-        stage('build_1') {
+        stage('build') {
             steps {
                 sh 'mvn install'
                 
