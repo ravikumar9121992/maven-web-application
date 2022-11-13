@@ -33,13 +33,13 @@ pipeline {
        
         stage('depoytest') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.195.71:8080/')], contextPath: 'gametest', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.235.23.221:8080/')], contextPath: 'gametest', war: '**/*.war'
             }
         }
        
         stage('deployprod') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.127.115.88:8080/')], contextPath: 'gameprod', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.235.113.200:8080/')], contextPath: 'gameprod', war: '**/*.war'
             }
         }
     }
