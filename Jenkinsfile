@@ -17,7 +17,7 @@ pipeline {
   sh  "mvn clean sonar:sonar"
   }
   }
-      
+      /*
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -30,7 +30,7 @@ pipeline {
                 
             }
         }
-       
+       */
         stage('depoytest') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.235.23.221:8080/')], contextPath: 'gametest', war: '**/*.war'
