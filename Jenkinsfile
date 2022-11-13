@@ -12,13 +12,14 @@ pipeline {
   sh  "mvn clean package"
   }
       }
+        
  stage('SonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar"
   }
   }
       
-        stage('test') {
+        /*stage('test') {
             steps {
                 sh 'mvn test'
             }
@@ -29,7 +30,7 @@ pipeline {
                 sh 'mvn install'
                 
             }
-        }
+        }*/
         stage('depoytest') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.235.23.221:8080/')], contextPath: 'gametest1', war: '**/*.war'
