@@ -7,19 +7,14 @@ pipeline {
     
     stages {
        
-        stage('Build') {
-  steps {
-      
+      stage('Build'){
+  steps{
   sh  "mvn clean package"
-      
   }
-  }
-        stage('ExecuteSonarQubeReport') {
-            
-  steps {
-      
+      }
+ stage('SonarQubeReport'){
+  steps{
   sh  "mvn clean sonar:sonar"
-      
   }
   }
       
