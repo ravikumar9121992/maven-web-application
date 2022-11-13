@@ -25,20 +25,21 @@ pipeline {
         
         
         stage('Build') {
-  steps {
+              steps {
       
-  sh  'mvn clean package'
+                  sh  'mvn clean package'
       
-  }
-  }
+                 }
+                   }
+        
         stage('ExecuteSonarQubeReport') {
             
-  steps {
+                 steps {
       
-  sh  'mvn clean sonar:sonar'
+                     sh  'mvn clean sonar:sonar'
       
-  }
-  }
+                    }
+                       }
         
         
         
