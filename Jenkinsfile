@@ -22,7 +22,7 @@ pipeline {
         }
 
          
-        
+        /*
         
         stage('Build') {
               steps {
@@ -41,7 +41,7 @@ pipeline {
                     }
                        }
         
-        
+        */
         
      
         stage('depoytest') {
