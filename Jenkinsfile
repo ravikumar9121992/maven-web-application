@@ -5,27 +5,28 @@ pipeline {
         
     }
     
-    stages {
-   /*    
- stage('Build'){
-  steps{
-  sh  "mvn clean package"
-  }
-      }*/
-        
- stage('SonarQubeReport'){
-  steps{
-  sh  "mvn clean sonar:sonar"
-  }
-  }
+    stages { 
+
       
         stage('test') {
             steps {
                 sh 'mvn test'
             }
         }
+        
+         stage('Build') {
+  steps {
+  sh  "mvn clean package"
+  }
+      }
+        
+ stage('SonarQubeReport') {
+  steps {
+  sh  "mvn clean sonar:sonar"
+  }
+  }
          
-        stage('build') {
+        stage('build_1') {
             steps {
                 sh 'mvn install'
                 
