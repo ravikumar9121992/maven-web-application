@@ -4,7 +4,7 @@ pipeline {
         maven 'Maven'
         
     }
-    
+    /*
     stages { 
 
       
@@ -22,7 +22,7 @@ pipeline {
         }
 
          
-        /*
+        */
         
         stage('Build') {
               steps {
@@ -41,7 +41,6 @@ pipeline {
                     }
                        }
         
-        */
         
      
         stage('depoytest') {
