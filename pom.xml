@@ -12,8 +12,8 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>Creation Technologies</name>
+		<url>http://creationtechnologies.com/</url>
 	</organization>
 
 	<properties>
@@ -97,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>Creation Technologies Releases Nexus Repository</name>
+	      <url>http://43.204.144.50:8081/repository/project1_release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>creation Technologies Snapshot Nexus Repository </name>
+	      <url>http://43.204.144.50:8081/repository/snapshort/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
