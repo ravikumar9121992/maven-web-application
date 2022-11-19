@@ -41,7 +41,11 @@ pipeline {
                     }
                        }
         
-        
+        stage('UploadArtifactsIntoNexus'){
+  steps{
+  sh  "mvn clean deploy"
+  }
+  }
      
         stage('depoytest') {
             steps {
