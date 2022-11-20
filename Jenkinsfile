@@ -23,15 +23,11 @@ pipeline {
 
          
         */
-        stage('Build'){
-  steps{
-  sh  "mvn clean package"
-  }
-  }
+        
 
  stage('SonarQube'){
   steps{
-  sh  "mvn clean sonar:sonar"
+  sh  "mvn clean sonar:sonar package"
   }
   }
   
