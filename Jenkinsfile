@@ -26,16 +26,16 @@ pipeline {
         
 
  stage('SonarQube'){
-  steps{
-  sh  "mvn clean sonar:sonar package"
+   steps{
+      sh  "mvn clean sonar:sonar package"
   }
-  }
+    }
   
   stage('nexus'){
-  steps{
-  sh  "mvn clean deploy"
-  }
-  }
+    steps{
+         sh  "mvn clean deploy"
+ }
+   }
      
         stage('depoytest') {
             
