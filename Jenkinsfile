@@ -32,7 +32,7 @@ pipeline {
                  }
                    }
         
-        stage('SonarQubeReport') {
+        stage('Sq') {
             
                  steps {
       
@@ -41,7 +41,7 @@ pipeline {
                     }
                        }
         
-        stage('UploadArtifactsIntoNexus'){
+        stage('uain'){
   steps{
   sh  "mvn clean deploy"
   }
