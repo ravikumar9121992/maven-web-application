@@ -32,7 +32,7 @@ pipeline {
                  }
                    }
         
-        stage('ExecuteSonarQubeReport') {
+        stage('SonarQubeReport') {
             
                  steps {
       
