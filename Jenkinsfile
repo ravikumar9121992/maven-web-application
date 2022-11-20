@@ -31,7 +31,7 @@ pipeline {
                   sh  'mvn clean package'
       
                  }
-                   }
+                   }*/
         
         stage('Sq') {
            
