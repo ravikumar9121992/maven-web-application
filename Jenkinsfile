@@ -36,14 +36,14 @@ pipeline {
          sh  "mvn clean deploy"
  }
    }
-     
+     /*
         stage('depoytest') {
             
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.36.84:8080/')], contextPath: 'qaa', war: '**/*.war'
             }
         }
-       
+       /*
         stage('deployprod') {
             
             steps {
@@ -53,4 +53,25 @@ pipeline {
     }
     
     }
+*/
+
+stage('Build Docker Image'){
+            steps{
+                 sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
+                 sh 'docker build -t tomcat:${BUILD_NUMBER} .'
+                 sh 'docker run -itd --name tomcatravi -p 2900:8080 tomcat:${BUILD_NUMBER}'
+             }
+         }
+        stage('Push Docker Image'){
+             steps{
+                  withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
+                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS}"
+            }
+            sh 'docker push awsdocker123456789/spring-boot-mongo'
+        }
+      }
+        
+        
+    }
+}
 
