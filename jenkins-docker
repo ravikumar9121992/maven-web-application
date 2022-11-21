@@ -15,10 +15,17 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                sh "mvn clean sonar:sonar package"
+                sh "mvn clean package sonar:sonar"
                 
             }
         }
+        stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
         stage('Upload War To Nexus'){
             steps{
                   nexusArtifactUploader artifacts: [
