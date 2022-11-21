@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    /*  
+    
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -22,9 +22,9 @@ pipeline {
         }
 
          
-        */
         
-
+        
+ /* 
  stage('SonarQube'){
    steps{
       sh  "mvn clean sonar:sonar package"
@@ -36,7 +36,7 @@ pipeline {
          sh  "mvn clean deploy"
  }
    }
-    
+    */
         stage('depoytest') {
             
             steps {
