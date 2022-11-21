@@ -1,7 +1,7 @@
 pipeline{
     agent any
      tools {
-        maven 'Maven-3.6.1'
+        maven 'Maven'
     }
     
     environment{
@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'Jenkins', url: 'https://github.com/ravikumar9121992/web-application.git'
+                git url: 'https://github.com/ravikumar9121992/web-application.git'
             }
         }
         stage("Maven Build"){
