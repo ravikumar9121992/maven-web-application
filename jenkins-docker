@@ -30,21 +30,9 @@ pipeline{
 
         stage('Upload War To Nexus'){
             steps{
-                  nexusArtifactUploader artifacts: [
-                       [
-                            artifactId: 'myweb', 
-                            classifier: '', 
-                            file: "target/web-application-8.2.0.war", 
-                            type: 'war'
-                       ]
-                  ], 
-                  credentialsId: 'nexus3', 
-                  groupId: 'in.javahome', 
-                  nexusUrl: 'http://172.31.35.81:8081/',
-                  nexusVersion: 'nexus3', 
-                  protocol: 'http', 
-                  repository: 'sample-releases', 
-                  version: '8.2.0'  
+                  nexusArtifactUploader artifacts: [[artifactId: 'maven_app', classifier: '', file: 'target/mavenapp-8.2.0.war', type: 'war']],
+                  credentialsId: 'nexus', groupId: 'in.javahome', nexusUrl: '172.31.35.81:8081', nexusVersion: 'nexus3', protocol: 'http',
+                  repository: 'sample-release', version: '8.2.0'  
               }
             }
         stage('Build Docker Image'){
