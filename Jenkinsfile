@@ -45,7 +45,7 @@ pipeline {
         stage('depoytest') {
             
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'qa237', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.127.12.1:8080/')], contextPath: 'qa237', war: '**/*.war'
             }
         }
      
