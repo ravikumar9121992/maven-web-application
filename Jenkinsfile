@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    /*
+    
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -21,8 +21,8 @@ pipeline {
             }
         }
 
-      */     
-        
+    
+   /*     
  stage('Build'){
   steps{
    sh  "mvn clean package"
@@ -40,18 +40,18 @@ pipeline {
          sh  "mvn clean deploy"
  }
    }
-  
+  */     
         stage('depoytest') {
             
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://43.205.206.231:8080/')], contextPath: 'qaaaa', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.148:8080/')], contextPath: 'qaaaa', war: '**/*.war'
             }
         }
      
         stage('deployprod') {
             
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.2.151.116:8080/')], contextPath: 'devvvv', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'devvvv', war: '**/*.war'
             }
         }
     }
