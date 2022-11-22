@@ -45,14 +45,14 @@ pipeline {
         stage('depoytest') {
             
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.148:8080/')], contextPath: 'qa22', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.148:8080/')], contextPath: 'qa23', war: '**/*.war'
             }
         }
      
         stage('deployprod') {
             
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'dev22', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'dev23', war: '**/*.war'
             }
         }
     }
