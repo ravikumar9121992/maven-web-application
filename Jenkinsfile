@@ -57,7 +57,7 @@ stage('Build Docker Image'){
 
                       sh "docker login -u awsdocker123456789 -p Awsdocker123"
             }
-            sh 'docker push awsdocker123456789/spring-boot-mongo tomcat:${BUILD_NUMBER}'
+            sh 'docker push awsdocker123456789/spring-boot-mongo:tomcat'
         }
       }
         
