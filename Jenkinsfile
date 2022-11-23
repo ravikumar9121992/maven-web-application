@@ -45,7 +45,6 @@ pipeline {
 
 stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
                  sh 'docker run -itd --name ravibabu -p 559:8080 tomcat:${BUILD_NUMBER} .'
              }
