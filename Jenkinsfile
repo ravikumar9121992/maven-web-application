@@ -53,7 +53,7 @@ stage('Build Docker Image'){
         stage('Push Docker Image'){
              steps{
                   withCredentials([usernameColonPassword(credentialsId: 'DOCKER_HUB_CREDENTIALS2', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS2}"
+                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS}"
             }
             sh 'docker push awsdocker123456789/spring-boot-mongo'
         }
