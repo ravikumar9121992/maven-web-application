@@ -42,24 +42,6 @@ pipeline {
  }
    }
   */    
-        /* 
-        stage('depoytest') {
-            
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://3.109.60.248:8080/')], contextPath: 'qa237', war: '**/*.war'
-            }
-        }*/
-/*
-        stage('deployprod') {
-            
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://52.66.195.125:8080/')], contextPath: 'dev237', war: '**/*.war'
-            }
-        }
-    }
-    
-    }*/
-
 
 stage('Build Docker Image'){
             steps{
