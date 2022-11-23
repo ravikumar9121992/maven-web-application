@@ -50,18 +50,7 @@ stage('Build Docker Image'){
                  sh 'docker run -itd --name tomcatravi -p 558:8080 tomcat:${BUILD_NUMBER} .'
              }
          }
-        stage('Push Docker Image'){
-             steps{
-                  withCredentials([usernameColonPassword(credentialsId: 'DOCKER_HUB_CREDENTIALS2', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS2}"
-            }
-           
-           sh 'docker tag awsdocker123456789/spring-boot-mongo:latest awsdocker123456789/spring-boot-mongo:tomcat'
-           sh 'docker tag tomcat:${BUILD_NUMBER} awsdocker123456789/tomcat:tomcat1'
-            sh 'docker push awsdocker123456789/spring-boot-mongo:tomcat'
-            sh 'docker push awsdocker123456789/spring-boot-mongo:tomcat1'
-        }
-      }
+        
         
         
     }
