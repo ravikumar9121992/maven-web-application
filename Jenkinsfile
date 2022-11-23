@@ -63,21 +63,3 @@ stage('Build Docker Image'){
     }
 }
 
-/*
-/*stage('depoytest') {
-            
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.148:8080/')], contextPath: 'qaaaa1', war: '**/*.war'
-            }
-        }*/
-     /*
-        stage('deployprod') {
-            
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'devvvv1', war: '**/*.war'
-            }
-        }
-    }
-    
-    }
-*/*/
