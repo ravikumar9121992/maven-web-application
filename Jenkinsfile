@@ -52,8 +52,8 @@ stage('Build Docker Image'){
          }
         stage('Push Docker Image'){
              steps{
-                  withCredentials([usernameColonPassword(credentialsId: 'DOCKER_HUB_CREDENTIALS1', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS}"
+                  withCredentials([usernameColonPassword(credentialsId: 'DOCKER_HUB_CREDENTIALS2', variable: 'DOCKER_HUB_CREDENTIALS')]) {
+                      sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALS2}"
             }
             sh 'docker push awsdocker123456789/spring-boot-mongo'
         }
@@ -62,3 +62,22 @@ stage('Build Docker Image'){
         
     }
 }
+
+
+/*stage('depoytest') {
+            
+            steps {
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://65.1.65.148:8080/')], contextPath: 'qaaaa1', war: '**/*.war'
+            }
+        }*/
+     /*
+        stage('deployprod') {
+            
+            steps {
+                deploy adapters: [tomcat9(credentialsId: 'adminid', path: '', url: 'http://13.126.28.219:8080/')], contextPath: 'devvvv1', war: '**/*.war'
+            }
+        }
+    }
+    
+    }
+*/
