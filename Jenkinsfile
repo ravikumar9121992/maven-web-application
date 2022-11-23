@@ -47,7 +47,7 @@ stage('Build Docker Image'){
             steps{
                  sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name tomcatdocker -p 557:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name tomcatravi -p 558:8080 tomcat:${BUILD_NUMBER} .'
              }
          }
         stage('Push Docker Image'){
