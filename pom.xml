@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>QA</finalName>
+		<finalName>maven-web-application</finalName>
 		
 		<plugins>
 			<plugin>
@@ -130,7 +130,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/maven-web-application</contextPath>
+						<contextPath>/QA</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
