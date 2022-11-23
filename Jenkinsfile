@@ -63,7 +63,7 @@ stage('Build Docker Image'){
     }
 }
 
-
+/*
 /*stage('depoytest') {
             
             steps {
@@ -80,4 +80,4 @@ stage('Build Docker Image'){
     }
     
     }
-*/
+*/*/
