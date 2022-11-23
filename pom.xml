@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>QA</finalName>
+		<finalName>maven-web-application</finalName>
 		
 		<plugins>
 			<plugin>
@@ -130,7 +130,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/QA</contextPath>
+						<contextPath>/maven-web-application1</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
@@ -143,7 +143,7 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
-					<wtpContextName>QA</wtpContextName>
+					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 	              </plugin>
 			<plugin>
