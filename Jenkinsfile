@@ -45,12 +45,12 @@ pipeline {
 
 stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t awsdocker123456789/spring-boot-mongo try'
-                 sh 'docker build -t awsdocker123456789/qc try'
-                 sh 'docker build -t awsdocker123456789/qa try'
-                 sh 'docker build -t awsdocker123456789/dev try'
-                 sh 'docker build -t awsdocker123456789/prod try'
-                 sh 'docker build -t tomcat:${BUILD_NUMBER} try'
+                 sh 'docker build -t awsdocker123456789/spring-boot-mongo:try'
+                 sh 'docker build -t awsdocker123456789/qc:try'
+                 sh 'docker build -t awsdocker123456789/qa:try'
+                 sh 'docker build -t awsdocker123456789/dev:try'
+                 sh 'docker build -t awsdocker123456789/prod:try'
+                 sh 'docker build -t tomcat:${BUILD_NUMBER} .'
                  sh 'docker run -itd --name ramji -p 457:8080 tomcat:${BUILD_NUMBER}'
 
              }
