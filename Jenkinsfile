@@ -45,11 +45,11 @@ pipeline {
 
 stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t awsdocker123456789/spring-boot-mongo:try'
-                 sh 'docker build -t awsdocker123456789/qc:try'
-                 sh 'docker build -t awsdocker123456789/qa:try'
-                 sh 'docker build -t awsdocker123456789/dev:try'
-                 sh 'docker build -t awsdocker123456789/prod:try'
+                 sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
+                 sh 'docker build -t awsdocker123456789/qc .'
+                 sh 'docker build -t awsdocker123456789/qa .'
+                 sh 'docker build -t awsdocker123456789/dev .'
+                 sh 'docker build -t awsdocker123456789/prod .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
                  sh 'docker run -itd --name ramji -p 457:8080 tomcat:${BUILD_NUMBER}'
 
@@ -62,10 +62,10 @@ stage('Build Docker Image'){
                          sh "docker login -u awsdocker123456789 -p ${DOCKER_HUB_CREDENTIALSp}"
             }
             sh 'docker push awsdocker123456789/spring-boot-mongo'
-            sh 'docker push awsdocker123456789/qa:try'
-            sh 'docker push awsdocker123456789/qc:try'
-            sh 'docker push awsdocker123456789/dev:try'
-            sh 'docker push awsdocker123456789/prod:try'
+            sh 'docker push awsdocker123456789/qa'
+            sh 'docker push awsdocker123456789/qc'
+            sh 'docker push awsdocker123456789/dev'
+            sh 'docker push awsdocker123456789/prod'
         }
       }
         
