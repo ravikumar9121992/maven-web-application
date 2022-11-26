@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    
+    /*
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -21,27 +21,34 @@ pipeline {
                 
             }
         }
-
+*/
     
-   /*     
- stage('Build'){
-  steps{
-   sh  "mvn clean package"
-  }
-  }    
- 
- stage('SonarQube'){
-   steps{
-      sh  "mvn clean sonar:sonar"
-  }
-    }
-  
-  stage('nexus'){
-    steps{
-         sh  "mvn clean deploy"
- }
-   }
-  */    
+       
+ stage("Maven Build"){
+            steps{
+                sh "mvn clean sonar:sonar package"
+                
+            }
+        }
+        stage('Upload War To Nexus'){
+            steps{
+                  nexusArtifactUploader artifacts: [
+                       [
+                            artifactId: 'myweb', 
+                            classifier: '', 
+                            file: "target/myweb-8.2.0.war", 
+                            type: 'war'
+                       ]
+                  ], 
+                  credentialsId: 'nexus3', 
+                  groupId: 'in.javahome', 
+                  nexusUrl: '172.31.4.63:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'sample-releases', 
+                  version: '8.2.0'  
+              }
+            }
 
 stage('Build Docker Image'){
             steps{
