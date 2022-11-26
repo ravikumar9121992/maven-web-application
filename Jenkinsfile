@@ -26,7 +26,7 @@ pipeline {
        
  stage("Maven Build"){
             steps{
-                sh "mvn clean sonar:sonar package"
+                sh "mvn clean package sonar:sonar"
                 
             }
         }
