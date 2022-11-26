@@ -14,7 +14,7 @@ pipeline {
             }
         }
         
-        /*
+        
          stage('build') {
             steps {
                 sh 'mvn install package'
@@ -29,7 +29,7 @@ pipeline {
                 sh "mvn clean package sonar:sonar"
                 
             }
-        }*/
+        }
         stage('Upload War To Nexus'){
             steps{
                   nexusArtifactUploader artifacts: [
@@ -49,7 +49,7 @@ pipeline {
                   version: '8.2.0'  
               }
             }
-
+*/
 stage('Build Docker Image'){
             steps{
                  sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
