@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    /*
+    
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -21,15 +21,15 @@ pipeline {
                 
             }
         }
-*/
+
     
-       
+  /*     
  stage("Maven Build"){
             steps{
                 sh "mvn clean package sonar:sonar"
                 
             }
-        }
+        }*/
         stage('Upload War To Nexus'){
             steps{
                   nexusArtifactUploader artifacts: [
