@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    /* 
+    
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -24,7 +24,7 @@ pipeline {
         
 
     
-     
+   /*  
  stage("Maven Build"){
             steps{
                 sh "mvn clean package sonar:sonar"
@@ -50,7 +50,7 @@ pipeline {
                   version: '8.2.0'  
               }
             }
-*/
+
           stage('Build'){
   steps{
   sh  "mvn clean package"
@@ -67,7 +67,7 @@ pipeline {
   steps{
   sh  "mvn clean deploy"
   }
-  }
+  }*/
 stage('Build Docker Image'){
             steps{
                  sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
