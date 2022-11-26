@@ -7,7 +7,7 @@ pipeline {
     
     stages { 
 
-    
+    /* 
         stage('test') {
             steps {
                 sh 'mvn test'
@@ -21,9 +21,10 @@ pipeline {
                 
             }
         }
+        
 
     
-  /*     
+     
  stage("Maven Build"){
             steps{
                 sh "mvn clean package sonar:sonar"
@@ -50,6 +51,18 @@ pipeline {
               }
             }
 */
+        
+        stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar"
+  }
+  }
+  
+  stage('UploadArtifactsIntoNexus'){
+  steps{
+  sh  "mvn clean deploy"
+  }
+  }
 stage('Build Docker Image'){
             steps{
                  sh 'docker build -t awsdocker123456789/spring-boot-mongo .'
