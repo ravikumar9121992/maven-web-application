@@ -76,7 +76,7 @@ stage('Build Docker Image'){
                  sh 'docker build -t awsdocker123456789/dev .'
                  sh 'docker build -t awsdocker123456789/prod .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name ramji -p 564:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name ramji -p 555:8080 tomcat:${BUILD_NUMBER}'
 
              }
          }
